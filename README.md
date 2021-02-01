@@ -1,3 +1,9 @@
+# Simple frontend for Elysian project interview
+
+Note: you can se if something went wrong when fetching data only in console :disappointed_relieved:
+
+I did not managed the errors cases.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
