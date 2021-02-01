@@ -8,8 +8,8 @@ const Pharmacy = ({ pharmacies }) => {
             <center><h1>Pharmacies</h1></center>
             {
                 pharmacies.map( pharmacy  => (
-                    <center>
-                    <div style = {{ width: '25rem', borderStyle: 'solid',marginTop : '2rem', textAlign: 'center' }} key = {pharmacy.id}>
+                    <center  key = {pharmacy.id}>
+                    <div style = {{ width: '25rem', borderStyle: 'solid',marginTop : '2rem', textAlign: 'center' }}>
                        <Card.Body >
                             <Card.Title>{pharmacy.name}</Card.Title>
                             <Card.Subtitle>{pharmacy.city}</Card.Subtitle>

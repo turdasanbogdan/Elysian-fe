@@ -11,16 +11,22 @@ function App() {
   const [city, setCity] = useState('');
   const [quantity, setQuantity] = useState(0);
 
+
   const getPharmasByCity = (city) => {
     const url = `http://localhost:8080/pharmacies/city/${city}`;
+    
     axios
       .get(url)
       .then(response => {
+
         setPharmacies(response.data);
         console.log(response.data);
-      },
-      (error) => { console.log(error); })
-    
+        
+      })
+      .catch(err => {
+        console.log(err);
+      })
+   
   }
 
   const getPharmasForDrug = (drug) => {
@@ -30,6 +36,9 @@ function App() {
       .then(response => {
         setPharmacies(response.data);
         console.log(response.data);
+      })
+      .catch(err => {
+        console.log(err);
       })
     
   }
@@ -45,11 +54,11 @@ function App() {
         console.log(quantity);
         console.log(response.data);
       })
+      .catch(err => {
+        console.log(err);
+      })
     
   }
-
-  // useEffect(getPharmasByCity,[]);
-  // useEffect(getPharmasForDrug,[]);
 
   return (
 
@@ -107,11 +116,12 @@ function App() {
               <option value="Adrenalina Terapia"/>
               <option value="Calciu"/>
             </datalist>  
-              <p>{quantity === 0 ? 'No qunatity to display' : quantity}</p>
+              <h1>{quantity === 0 ? 'No qunatity to display' : quantity}</h1>
   
        <hr style= {{ width: '100%' }}></hr>   
         
-        <Pharmacy pharmacies = {pharmacies}/>
+       <h1 key = {0}>{ pharmacies.length === 0 ? 'No pharmachies founded' : <Pharmacy pharmacies = {pharmacies}/> } </h1>
+
       </div>  
  
 );
