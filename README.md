@@ -1,4 +1,4 @@
-# Simple frontend for Elysian project interview
+# Simple frontend for farma project
 
 Note: you can se if something went wrong when fetching data only in console :disappointed_relieved:
 
